@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manusia Ter Aneh Menurut On The Spot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #f5f5f0;
+      font-family: 'Lato', sans-serif;
+      color: #1a1a1a;
+    }
+
+    /* HEADER */
+    header {
+      background: #1a1a1a;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+    .logo span { color: #e63946; }
+    .header-tag {
+      background: #e63946;
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding: 4px 10px;
+      border-radius: 2px;
+    }
+
+    /* KATEGORI TICKER */
+    .ticker {
+      background: #e63946;
+      padding: 6px 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+    }
+
+    /* BREADCRUMB */
+    .breadcrumb {
+      font-size: 0.75rem;
+      color: #999;
+      margin-bottom: 16px;
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+    .breadcrumb a { color: #e63946; text-decoration: none; }
+    .breadcrumb span { color: #ccc; }
+
+    /* KATEGORI BADGE */
+    .cat-badge {
+      display: inline-block;
+      background: #e63946;
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding: 4px 12px;
+      border-radius: 2px;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+    }
+
+    /* JUDUL */
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.3;
+      color: #1a1a1a;
+      margin-bottom: 16px;
+    }
+
+    /* META */
+    .meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #1a1a1a;
+    }
+    .author-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #e63946;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    .meta-info { flex: 1; }
+    .meta-author {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+    .meta-author a {
+      color: #e63946;
+      text-decoration: none;
+    }
+    .meta-date {
+      font-size: 0.75rem;
+      color: #999;
+      margin-top: 2px;
+    }
+    .meta-share {
+      font-size: 0.75rem;
+      color: #999;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* HIGHLIGHT / INTRO */
+    .highlight-box {
+      background: #fff8f8;
+      border-left: 4px solid #e63946;
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 24px;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #333;
+      font-style: italic;
+    }
+
+    /* FOTO */
+    .foto-wrapper {
+      margin: 0 -4px 8px;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+    }
+    .foto-wrapper img {
+      width: 100%;
+      display: block;
+      border-radius: 8px;
+    }
+    .foto-caption {
+      font-size: 0.75rem;
+      color: #999;
+      text-align: center;
+      padding: 8px 0 20px;
+      font-style: italic;
+    }
+
+    /* KONTEN ARTIKEL */
+    .artikel p {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: #2a2a2a;
+      margin-bottom: 18px;
+    }
+    .artikel h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 28px 0 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #eee;
+    }
+
+    /* QUOTE */
+    blockquote {
+      background: #fff;
+      border: 1px solid #eee;
+      border-left: 4px solid #e63946;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 20px 0;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: #444;
+      line-height: 1.7;
+    }
+
+    /* FAKTA BOX */
+    .fakta-box {
+      background: #1a1a1a;
+      color: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 24px 0;
+    }
+    .fakta-box h3 {
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #e63946;
+      margin-bottom: 14px;
+    }
+    .fakta-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    .fakta-num {
+      background: #e63946;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      min-width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* TAG */
+    .tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 28px 0 0;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
+    .tag {
+      background: #f0f0eb;
+      color: #555;
+      font-size: 0.75rem;
+      padding: 5px 12px;
+      border-radius: 20px;
+      border: 1px solid #ddd;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #1a1a1a;
+      color: #666;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.78rem;
+    }
+    footer strong { color: #e63946; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">On<span>Spot</span>News</div>
+  <div class="header-tag">BREAKING NEWS</div>
+</header>
+<div class="ticker">🔴 UNIK &nbsp;&nbsp;|&nbsp;&nbsp; ON THE SPOT EDISI KHUSUS &nbsp;&nbsp;|&nbsp;&nbsp; FAKTA MENGEJUTKAN</div>
+
+<!-- ARTIKEL -->
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="#">Beranda</a>
+    <span>›</span>
+    <a href="#">Unik</a>
+    <span>›</span>
+    Manusia Ter Aneh
+  </div>
+
+  <span class="cat-badge">🔥 On The Spot</span>
+
+  <h1>Manusia Ter Aneh Menurut On The Spot — Kisah Unik dari Surabaya</h1>
+
+  <div class="meta">
+    <div class="author-avatar">W</div>
+    <div class="meta-info">
+      <div class="meta-author">Ditulis oleh <a href="#">@wtshiigusz</a></div>
+      <div class="meta-date">24 Maret 2026 &nbsp;·&nbsp; 3 menit baca</div>
+    </div>
+    <div class="meta-share">📤 Bagikan</div>
+  </div>
+
+  <div class="highlight-box">
+    Seorang anak asal Surabaya yang memiliki tinggi sekitar kurang lebih 150cm ini berhasil mencuri perhatian banyak orang karena keunikannya yang luar biasa.
+  </div>
+
+  <!-- FOTO UTAMA -->
+  <div class="foto-wrapper">
+    <img src= "foto.jpg" alt="Foto Arty dari Surabaya">
+  </div>
+  <p class="foto-caption">📸 Arty — Si unik asal Surabaya yang viral di media sosial</p>
+
+  <!-- ISI ARTIKEL -->
+  <div class="artikel">
+
+    <p>
+      Dunia ini memang penuh kejutan. Di tengah jutaan manusia yang hidup dengan cara biasa-biasa saja, selalu ada individu yang tampil beda dan mencuri perhatian. Salah satunya adalah sosok yang dikenal dengan nama <strong>Arty</strong>, seorang anak muda asal Kota Surabaya yang kini ramai diperbincangkan.
+    </p>
+
+    <h2>Siapa Sebenarnya Arty?</h2>
+
+    <p>
+      Dengan tinggi badan sekitar 150 cm, sosok ini membuktikan bahwa ukuran badan bukan penghalang untuk tampil percaya diri dan menarik perhatian publik. Gaya hidupnya yang unik dan kepribadiannya yang berbeda dari kebanyakan orang menjadikannya kandidat kuat masuk dalam kategori "manusia ter-aneh" versi On The Spot.
+    </p>
+
+    <blockquote>
+      "Jadi diri sendiri itu lebih keren daripada pura-pura jadi orang lain."
+    </blockquote>
+
+    <p>
+      Di balik penampilannya yang tampak biasa, tersimpan berbagai keunikan yang membuat siapapun yang mengenalnya tak akan mudah melupakannya. Dari cara berbicara, cara berjalan, hingga selera humor yang out of the box — semuanya menjadi ciri khas tersendiri.
+    </p>
+
+    <div class="fakta-box">
+      <h3>⚡ Fakta Unik Arty</h3>
+      <div class="fakta-item">
+        <div class="fakta-num">1</div>
+        <div>Berasal dari Surabaya, kota terbesar kedua di Indonesia yang terkenal dengan warganya yang blak-blakan.</div>
+      </div>
+      <div class="fakta-item">
+        <div class="fakta-num">2</div>
+        <div>Tinggi badan sekitar 150 cm, tapi semangat dan kepercayaan dirinya setinggi gunung Semeru.</div>
+      </div>
+      <div class="fakta-item">
+        <div class="fakta-num">3</div>
+        <div>Selalu tampil dengan ekspresi yang ekspresif dan penuh energi di setiap kesempatan.</div>
+      </div>
+      <div class="fakta-item">
+        <div class="fakta-num">4</div>
+        <div>Sudah viral di kalangan teman-teman dekat bahkan sebelum dikenal lebih luas.</div>
+      </div>
+    </div>
+
+    <h2>Kenapa Masuk Kategori "Ter Aneh"?</h2>
+
+    <p>
+      Dalam program On The Spot, kategori "ter aneh" bukan berarti sesuatu yang negatif. Justru sebaliknya — ini adalah penghargaan untuk mereka yang berani tampil berbeda, autentik, dan tidak takut menjadi diri sendiri di tengah tekanan sosial yang menuntut keseragaman.
+    </p>
+
+    <p>
+      @wtshiigusz berhasil membuktikan bahwa menjadi "aneh" adalah kekuatan, bukan kelemahan. Dan itulah yang membuat sosok ini layak mendapat sorotan khusus dalam edisi On The Spot kali ini.
+    </p>
+
+  </div>
+
+  <div class="tags">
+    <span class="tag">#OnTheSpot</span>
+    <span class="tag">#Surabaya</span>
+    <span class="tag">#Unik</span>
+    <span class="tag">#Viral</span>
+    <span class="tag">#wtshiigusz</span>
+  </div>
+
+</div>
+
+<footer>
+  &copy; 2026 <strong>OnSpotNews</strong> &nbsp;·&nbsp; Portal Berita Unik Indonesia
+</footer>
+
+</body>
+</html>
